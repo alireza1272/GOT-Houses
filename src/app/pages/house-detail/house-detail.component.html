@@ -1,0 +1,16 @@
+<mat-spinner
+  *ngIf="(sharedService.showLoading | async)"
+  [diameter]="40"
+  [color]="'warn'"
+></mat-spinner>
+<div class="container" *ngIf="!(sharedService.showLoading | async)">
+  <h2>{{houseDetail.name}}</h2>
+  <ul>
+    <h3>Members: </h3>
+    <li *ngFor="let member of houseDetail.members" class="house-card">
+      <a [routerLink]="['/characters', member.slug]">
+        {{ member.name }}
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,40 @@
+/* header.component.scss */
+
+header {
+  background-color: #2d4146;
+  padding: 16px 24px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 0px 5px 5px #78787833;
+
+  nav {
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    .header-items {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+
+      h1 {
+        font-family: cursive;
+        font-size: xx-large;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 4px 0;
+
+        &.active {
+          border-bottom: 2px solid white;
+        }
+      }
+    }
+  }
+}

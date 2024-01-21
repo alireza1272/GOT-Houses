@@ -1,0 +1,42 @@
+.houses-list {
+  margin: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: aliceblue;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 8px;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li.house.card {
+      background: wheat;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+  }
+}
+
+h3 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}

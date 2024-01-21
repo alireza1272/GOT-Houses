@@ -1,0 +1,32 @@
+app-search-list {
+  justify-self: flex-end;
+  margin-left: auto;
+}
+
+.card {
+  margin: 16px 24px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 16px;
+  box-shadow: 4px 4px 8px 0px rgba(120, 120, 120, 0.2);
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.8);
+  a {
+    text-decoration: none;
+    color: #535f69;
+    font-weight: bold;
+    cursor: pointer;
+    width: fit-content;
+    margin-bottom: 8px;
+    padding: 4px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.house-name {
+  color: #935656 !important;
+}

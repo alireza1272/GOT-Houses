@@ -1,0 +1,18 @@
+<header>
+  <nav>
+    <div class="header-items">
+      <h1>
+        Game Of Thrones
+      </h1>
+      <a routerLink="/houses" [class]="'houses'|isActiveRoute|async">
+        Houses
+      </a>
+      <a routerLink="/characters" [class]="'characters'|isActiveRoute|async">
+        Persons
+      </a>
+      <a routerLink="/quotes" [class]="'quotes'|isActiveRoute|async">
+        Quotes
+      </a>
+    </div>
+  </nav>
+</header>

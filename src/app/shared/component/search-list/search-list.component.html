@@ -1,0 +1,9 @@
+<div class="search-container">
+  <input type="search" placeholder="Search in the list . . ."
+         id="search-box"
+         autocomplete="off"
+         (keydown)="onKeyPress($event)"
+         (ngModelChange)="change($event)" value="" aria-label="Number"
+         [(ngModel)]="searchTerm"/>
+  <button class="clear-button" (click)="cancelSearch()">x</button>
+</div>

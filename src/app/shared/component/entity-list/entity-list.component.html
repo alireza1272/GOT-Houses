@@ -1,0 +1,60 @@
+<mat-spinner
+  *ngIf="(sharedService.showLoading | async)"
+  [diameter]="40"
+  [color]="'warn'"
+></mat-spinner>
+<ng-container *ngIf="!(sharedService.showLoading | async)">
+  <div class="container">
+    <div class="container-header" #content>
+      <h2>{{entityType}}</h2>
+      <app-search-list
+        *ngIf="entityType !=='Quotes'"
+        [entitiesList]="entities"
+        (onFilterList)="entities=$event">
+      </app-search-list>
+      <button
+        *ngIf="entityType==='Quotes' && !(sharedService.buttonLoading|async)"
+        (click)="generate()" class="special-button">
+        Generate Random Quotes!
+      </button>
+      <mat-spinner
+        *ngIf="(sharedService.buttonLoading|async)"
+        [diameter]="40"
+        [color]="'warn'"
+      ></mat-spinner>
+    </div>
+    <ul>
+      <li *ngFor="let entity of entities" class="entity-card">
+        <ng-container *ngIf="entityType==='Houses'">
+          <a [routerLink]="[('/' + entityType.toLowerCase()), entity.slug]">
+            {{ entity.name }}
+          </a>
+        </ng-container>
+        <ng-container *ngIf="entityType==='Characters'">
+          <div class="card">
+            <a [routerLink]="['/characters', entity.slug]">
+              {{entity.name}}
+            </a>
+            <a *ngIf="entity.house?.name" class="house-name"
+               [routerLink]="['/houses', entity.house.slug]">
+              {{entity.house.name}}
+            </a>
+            <p>{{entity.sentence}}</p>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="entityType==='Quotes'">
+          <div class="card">
+            <a [routerLink]="['/characters', entity.character.slug]">
+              {{entity.character.name}}
+            </a>
+            <a *ngIf="entity.character.house?.name" class="house-name"
+               [routerLink]="['/houses', entity.character.house.slug]">
+              {{entity.character.house.name}}
+            </a>
+            <p>{{entity.sentence}}</p>
+          </div>
+        </ng-container>
+      </li>
+    </ul>
+  </div>
+</ng-container>

@@ -1,0 +1,26 @@
+.person-quotes {
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 5px;
+
+  .top-section {
+    display: flex;
+    align-items: center;
+  }
+
+  ul {
+    background: rgba(255, 255, 255, 0.8);
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 5px;
+    color: #535f69;
+  }
+}
+
+.house a {
+  text-decoration: none;
+  color: #535f69;
+  font-weight: bold;
+  cursor: pointer;
+  width: fit-content;
+}

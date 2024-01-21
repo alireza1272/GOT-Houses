@@ -1,0 +1,37 @@
+.search-container {
+  position: relative;
+
+  input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    margin-right: 5px;
+
+    &::placeholder {
+      color: #aaa;
+    }
+
+    &:focus {
+      border-color: #4CAF50;
+    }
+  }
+
+  .clear-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #777;
+
+    &:hover {
+      color: #333;
+    }
+  }
+}

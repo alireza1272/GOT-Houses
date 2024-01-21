@@ -1,0 +1,38 @@
+<mat-spinner
+  *ngIf="(sharedService.showLoading | async)"
+  [diameter]="40"
+  [color]="'warn'"
+></mat-spinner>
+<div class="container person-detail" *ngIf="!(sharedService.showLoading | async)">
+  <div class="container-header">
+    <h2>{{characterDetail.name}}</h2>
+  </div>
+  <ul>
+    <li class="house" *ngIf="characterDetail.house">
+      <h3>House: </h3>
+      <a [routerLink]="['/houses', characterDetail.house?.slug]">
+        {{characterDetail.house?.name}}
+      </a>
+    </li>
+  </ul>
+  <div class="person-quotes" *ngIf="characterQuotes?.length>0">
+    <div class="top-section">
+      <h3>Quotes: </h3>
+      <button
+        *ngIf="!(sharedService.buttonLoading|async)"
+        (click)="randomizeQuote()" class="special-button">
+        Generate {{characterDetail.slug}} Quotes!
+      </button>
+      <mat-spinner
+        *ngIf="(sharedService.buttonLoading|async)"
+        [diameter]="40"
+        [color]="'warn'"
+      ></mat-spinner>
+    </div>
+    <ul>
+      <li *ngFor="let quote of characterQuotes" class="house-card">
+        {{quote}}
+      </li>
+    </ul>
+  </div>
+</div>
